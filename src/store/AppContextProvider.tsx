@@ -1,12 +1,13 @@
 import { useState } from "react";
 import type { AppCtx } from "./AppContext";
 import AppContext from "./AppContext";
+import type { Difficulty } from "../lib/types";
 
 
 const difficultyFromLocalStorage = localStorage.getItem('difficulty');
 const modeFromLocalStorage = localStorage.getItem('mode');
 
-let storedDifficulty: string = "easy";
+let storedDifficulty: Difficulty = "easy";
 let storedMode: number | string = 60;
 
 if (modeFromLocalStorage) {
@@ -18,10 +19,10 @@ if (difficultyFromLocalStorage) {
 };
 
 const AppContextProvider = ({children}: {children: React.ReactNode}) => {
-    const [difficulty, setDifficulty] = useState<string | number>(storedDifficulty);
+    const [difficulty, setDifficulty] = useState<Difficulty>(storedDifficulty);
     const [mode, setMode] = useState<number | string>(storedMode);
 
-    const handleDifficultyChange = (newDifficulty: string | number) => {
+    const handleDifficultyChange = (newDifficulty: Difficulty) => {
         setDifficulty(newDifficulty);
         localStorage.setItem('difficulty', JSON.stringify(newDifficulty));
     };

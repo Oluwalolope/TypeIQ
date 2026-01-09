@@ -1,9 +1,10 @@
 import { createContext } from "react";
+import type { Difficulty } from "../lib/types";
 
 
 export type AppCtx = {
-    difficulty: 'easy' | 'medium' | 'hard';
-    handleDifficultyChange: (difficulty: 'easy' | 'medium' | 'hard') => void;
+    difficulty: Difficulty;
+    handleDifficultyChange: (difficulty: Difficulty) => void;
     mode: number | string; // e.g., 60 for timed mode or 'passage' for passage mode
     handleModeChange: (mode: number | string) => void;
 };

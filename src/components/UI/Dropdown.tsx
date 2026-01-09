@@ -1,13 +1,12 @@
 import { useContext, useState } from "react";
 import iconDownArrow from "../../assets/images/icon-down-arrow.svg";
 import AppContext from "../../store/AppContext";
+import type { Difficulty } from "../../lib/types";
 
 type props = {
   dropdownItems: { title: string; value: number | string }[];
   dropdownItemType?: "difficulty" | "mode";
 };
-
-type Difficulty = 'easy' | 'medium' | 'hard';
 
 const Dropdown = ({ dropdownItems, dropdownItemType }: props) => {
   const appCtx = useContext(AppContext);
