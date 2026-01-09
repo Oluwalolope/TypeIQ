@@ -3,11 +3,12 @@
 :root {
   --background: #121212;
   --neutral: #949497;
+  --dropdown: #262626;
 }
 
 @font-face {
   font-family: 'Sora';
-  src: url('/public/fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
+  src: url('/fonts/Sora/Sora-VariableFont_wght.ttf') format('truetype');
 }
 
 @theme {
@@ -17,6 +18,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-neutral: var(--neutral);
+  --color-dropdown: var(--dropdown);
 }
 
 
